@@ -68,6 +68,7 @@ LRESULT GameWindow::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
                 for (size_t i = 0; i < data->GetSize(); i++)
                 {
                     delta = 0;
+
                     for (size_t j = 0; j < data->GetSize(); j++)
                     {
                         delta += data->arr[j][i];
@@ -75,6 +76,23 @@ LRESULT GameWindow::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
                     if (delta % 2 == 0) data->resultSecondPlayer++;
                     else data->resultFristPlayer++;
                 }
+                for (size_t i = 0; i < data->GetSize(); i++)
+                {
+                    delta = 0;
+                    for (size_t j = 0; j < data->GetSize(); j++)
+                    {
+                        delta += data->arr[j][i];
+                    }
+                    if (delta % 2 == 0) data->resultSecondPlayer++;
+                    else data->resultFristPlayer++;
+                }
+                delta = 0;
+                for (size_t i = 0; i < data->GetSize(); i++)
+                {
+                    delta += data->arr[i][i];
+                }
+                if (delta % 2 == 0) data->resultSecondPlayer++;
+                else data->resultFristPlayer++;
                 data->window = WindowsClass::Win;
                 PostQuitMessage(0);
                 return 0;

@@ -21,7 +21,7 @@ public:
 	int window = 0;
 	int nCmdShow = 0;
 	int** arr = nullptr;
-	wchar_t deltaSTR[15];
+	wchar_t deltaSTR[16];
 	size_t resultFristPlayer = 0;
 	size_t resultSecondPlayer = 0;
 	size_t count = 0;
@@ -34,7 +34,7 @@ protected:
 	void NewArray();
 	size_t size = 0;
 	void DeleteArray();
-	LPWSTR first = LPWSTR(L"Первый игрок  ");
-	LPWSTR second = LPWSTR(L"Второй игрок  ");
+	LPWSTR first = LPWSTR(L"Первый игрок   ");
+	LPWSTR second = LPWSTR(L"Второй игрок   ");
 };
 

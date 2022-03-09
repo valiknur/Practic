@@ -14,4 +14,3 @@ public:
     LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam) override;
     void ShowContext() override;
 };
-

@@ -41,19 +41,20 @@ LPWSTR GameData::Finish(bool chet)
 	size_t& T = (chet ? resultSecondPlayer : resultFristPlayer);
 	if (chet)
 	{
-		for (size_t i = 0; i < 15; i++)
+		for (size_t i = 0; i < 16; i++)
 		{
 			deltaSTR[i] = second[i];
 		}
 	}
 	else
 	{
-		for (size_t i = 0; i < 15; i++)
+		for (size_t i = 0; i < 16; i++)
 		{
 			deltaSTR[i] = first[i];
 		}
 	}
-	deltaSTR[13] = T + '0';
+	deltaSTR[13] = (T / 10 != 0? (T / 10) + '0': ' ');
+	deltaSTR[14] = T + '0';
 	return LPWSTR(deltaSTR);
 }
 
