@@ -52,8 +52,8 @@ LRESULT GameWindow::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
             data->arr[(x - 10) / 50][(y - 10) / 50] = chet ? 0 : 1;
 
             chet = !chet;
-            if (chet) SetWindowText(staticTextForField, L"Ходит Игрок 2");
-            else SetWindowText(staticTextForField, L"Ходит Игрок 1");
+            if (chet) SetWindowText(staticTextForField, L"Г•Г®Г¤ГЁГІ Г€ГЈГ°Г®ГЄ 2");
+            else SetWindowText(staticTextForField, L"Г•Г®Г¤ГЁГІ Г€ГЈГ°Г®ГЄ 1");
 
             RECT updatePlace;
             updatePlace.left = (x - 10) / 50 * 50 + 10;
@@ -70,7 +70,7 @@ LRESULT GameWindow::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
                     delta = 0;
                     for (size_t j = 0; j < data->GetSize(); j++)
                     {
-                        delta += data->arr[i][j];
+                        delta += data->arr[j][i];
                     }
                     if (delta % 2 == 0) data->resultSecondPlayer++;
                     else data->resultFristPlayer++;
@@ -92,7 +92,7 @@ void GameWindow::ShowContext()
     
     staticTextForField = CreateWindow(
         L"STATIC",  // Predefined class; Unicode assumed 
-        L"Ходит Игрок 1",      // Button text 
+        L"Г•Г®Г¤ГЁГІ Г€ГЈГ°Г®ГЄ 1",      // Button text 
         WS_BORDER | WS_CHILD | WS_VISIBLE | ES_RIGHT | ES_LEFT | ES_AUTOVSCROLL,  // Styles 
         50 + data->GetSize() * 50,         // x position 
         30,         // y position 
